@@ -1,0 +1,56 @@
+<form #emailForm="ngForm" (ngSubmit)="submitForm(emailForm)">
+  <div class="wrapper">
+    <div class="group">
+      <label for="name">Enter your name</label
+      ><input
+        id="name"
+        required="required"
+        ngModel
+        (change)="log(name)"
+        #name="ngModel"
+        name="name"
+        type="text"
+        [class.error]="name.touched && !name.valid"
+      />
+      <div class="errors" *ngIf="name.touched && name.invalid">
+        <span *ngIf="name.errors.required">Name is required</span>
+      </div>
+    </div>
+    <div class="group">
+      <label for="email">Enter your email</label>
+      <input
+        type="email"
+        ngModel
+        #email="ngModel"
+        required
+        [class.error]="name.touched && name.invalid"
+        name="email"
+        id="email"
+      />
+    </div>
+    <div class="group">
+      <label for="subject">Enter the message's subject</label>
+      <input
+        type="text"
+        ngModel
+        #subject="ngModel"
+        id="subject"
+        name="subject"
+      />
+    </div>
+    <div class="group">
+      <label for="message">Enter your message</label>
+      <textarea
+        name="message"
+        ngModel
+        #message="ngModel"
+        id="message"
+        cols="30"
+        rows="10"
+      ></textarea>
+    </div>
+    <div class="group">
+      <button>Submit Message</button>
+    </div>
+  </div>
+</form>

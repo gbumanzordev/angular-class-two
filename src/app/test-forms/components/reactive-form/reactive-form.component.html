@@ -1,0 +1,36 @@
+<form [formGroup]="form">
+  <div class="wrapper">
+    <div class="group">
+      <label for="name">Enter your name *</label
+      ><input id="name" formControlName="name" name="name" type="text" />
+    </div>
+    <div class="group">
+      <label for="email">Enter your email</label>
+      <input type="email" formControlName="email" name="email" id="email" />
+    </div>
+    <div class="group">
+      <label for="subject">Enter the message's subject</label>
+      <input
+        type="text"
+        formControlName="subject"
+        id="subject"
+        name="subject"
+      />
+    </div>
+    <div class="group">
+      <label for="message">Enter your message</label>
+      <textarea
+        name="message"
+        formControlName="message"
+        id="message"
+        cols="30"
+        rows="10"
+      ></textarea>
+    </div>
+    <div class="group">
+      <button (click)="submitForm()">
+        Submit Message
+      </button>
+    </div>
+  </div>
+</form>

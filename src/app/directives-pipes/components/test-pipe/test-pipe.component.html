@@ -1,0 +1,19 @@
+<p><b>Date Pipe</b> {{ birthDate | date: format }}</p>
+<button (click)="toggleFormat()">Toggle Format</button>
+
+<p><b>JSON Pipe: </b> {{ person | json }}</p>
+
+<!-- <p><b>KeyValue Pipe: </b> {{  }} </p> -->
+<div *ngFor="let p of person | keyvalue"><p>{{ p.value.name }}</p></div>
+
+<p>
+  <b>Currency Pipe:</b> {{ amount | currency: 'COP':'symbol-narrow':'4.3-3' }}
+</p>
+
+<p><b>Uppercase Pipe:</b> {{ name | uppercase }}</p>
+
+<p><b>Lowercase Pipe:</b> {{ name | lowercase }}</p>
+
+<p><b>Percent Pipe:</b> {{ courseCompletion | percent }}</p>
+
+<p><b>Exponential Pipe:</b> {{ 4 | testPipe:2 }} </p>
